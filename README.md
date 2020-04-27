@@ -25,7 +25,7 @@ The list of words is randomly sourced from the [words.txt](data/words.txt) file.
 
 ## Future Enhancements
 * Ability to start new game without needing to rerun the script
-* Switch the team that starts with 9 cards at the start of the  
+* Switch the team that starts with 9 words
 
 ## Donation
 If you enjoyed this game with friends and family, consider buying me a beer.<br><br>
