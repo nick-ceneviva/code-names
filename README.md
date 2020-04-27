@@ -16,7 +16,7 @@ The game uses the same rules as the board game.  The full game rules can be foun
 ## Install Instructions
 1. Download the Files from GitHub
 2. Install any uninstalled packages such as pygame using `pip install pygame`
-3. update the config.txt to have the email address and email password for the email that will be used to send the answer key
+3. Rename the config-sample.txt file to config.txt and update the file to have the email address and email password for the email that will be used to send the answer key
 
 ## Word List
 The list of words is randomly sourced from the [words.txt](data/words.txt) file.  This file is created from several lists of common nouns.  If you do not like a word or want to add your own, you just need to update the words.txt file.
