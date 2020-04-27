@@ -1,0 +1,3 @@
+[configuration]
+email = example@email.com
+password = XXXXXXXXXXXXXXXX
