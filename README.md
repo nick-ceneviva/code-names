@@ -1,5 +1,5 @@
 # Code Names
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=3GBQLRW7D77AG&item_name=Quarantine+Fun&currency_code=USD&source=url)<br><br>
+
 Online version of the popular game from Czech Game Editions optimized for playing over Zoom, Google Hangouts, or a similar video chat program that allows for screensharing.  
 <br>Only the person running the Python script needs to have access to the game.  All Spymasters (person giving the clues) need to be able to access their email on a device different than the one being used for the video call.  Because the key for the spymasters is emailed, teh spymaster does not need to be alone to give clues.
 
@@ -16,6 +16,7 @@ The game uses the same rules as the board game.  The full game rules can be foun
 
 ## Install Instructions
 1. Download the Files from GitHub
+2. Ensure [Python 3](https://www.python.org/download/releases/3.0/) is installed.
 2. Install any uninstalled packages such as pygame using `pip install pygame`
 3. Rename the config-sample.txt file to config.txt and update the file to have the email address and email password for the email that will be used to send the answer key
 
