@@ -3,8 +3,19 @@ import sys
 import numpy as np
 import pygame
 import math
+import configparser
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
+
+import smtplib, ssl
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from email.mime.image import MIMEImage
+
+config = configparser.ConfigParser()
+config.read("config.txt")
+sender_email= config.get("configuration","email")
+password = config.get("configuration","password")
 
 CARD_DEFAULT = (235,213,179)
 BLACK = (0,0,0)
@@ -59,11 +70,54 @@ def createKey():
 
     plt.axis('off')
     plt.savefig("board.png", bbox_inches='tight')
-
+    
     return np.reshape(cards[:25],(5,5))
 
-#def sendKey():
-    #https://realpython.com/python-send-email/#option-1-setting-up-a-gmail-account-for-development
+def sendKey(receiver_email):
+    message = MIMEMultipart("alternative")
+    message["Subject"] = "Code Names Board"
+    message["From"] = sender_email
+    message["To"] = receiver_email
+
+    # Create the plain-text and HTML version of your message
+    text = """\
+    Hi,
+    How are you?
+    Real Python has many great tutorials:
+    www.realpython.com"""
+    html = """\
+    <html>
+    <body>
+        <img src="cid:image1" alt="Code names Key">
+    </body>
+    </html>
+    """
+
+    # Turn these into plain/html MIMEText objects
+    part1 = MIMEText(text, "plain")
+    part2 = MIMEText(html, "html")
+
+    # Add HTML/plain-text parts to MIMEMultipart message
+    # The email client will try to render the last part first
+    message.attach(part1)
+    message.attach(part2)
+
+    # This example assumes the image is in the current directory
+    fp = open('board.png', 'rb')
+    msgImage = MIMEImage(fp.read())
+    fp.close()
+
+    # Define the image's ID as referenced above
+    msgImage.add_header('Content-ID', '<image1>')
+    message.attach(msgImage)
+
+    # Create secure connection with server and send email
+    context = ssl.create_default_context()
+    with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
+        server.login(sender_email, password)
+        server.sendmail(
+            sender_email, receiver_email, message.as_string()
+        )
 
 def checkScore(score,board):
     game_over = False
@@ -129,13 +183,18 @@ def draw_board(board):
 
 board = createBoard()
 key = createKey()
+email = input('Enter Team 1 CodeMaster:')
+sendKey(email)
+email = input('Enter Team 2 CodeMaster:')
+sendKey(email)
+
 game_over = False
 endTurn = False
 team = '1'
 score = {}
 
-print(board)
-print(key)
+# print(board)
+# print(key)
 
 CARD_HEIGHT = 100
 CARD_WIDTH = 150
