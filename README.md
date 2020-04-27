@@ -19,7 +19,7 @@ The game uses the same rules as the board game.  The full game rules can be foun
 3. update the config.txt to have the email address and email password for the email that will be used to send the answer key
 
 ## Word List
-The list of words is randomly sourced from the [words.txt](words.txt) file.  This file is created from several lists of common nouns.  If you do not like a word or want to add your own, you just need to update the words.txt file.
+The list of words is randomly sourced from the [words.txt](data/words.txt) file.  This file is created from several lists of common nouns.  If you do not like a word or want to add your own, you just need to update the words.txt file.
 
 ## Future Enhancements
 * Ability to start new game without needing to rerun the script
