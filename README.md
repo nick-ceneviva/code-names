@@ -27,6 +27,3 @@ The list of words is randomly sourced from the [words.txt](data/words.txt) file.
 * Ability to start new game without needing to rerun the script
 * Switch the team that starts with 9 words
 
-## Donation
-If you enjoyed this game with friends and family, consider buying me a beer.<br><br>
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/donate/?token=Ykt1I3obDILkn5E6sG5zK7UqLDd9yboLYnW35c4lVtv4NVM3-7v--48XTE9TkWvk3xPGtm&country.x=US&locale.x=)
