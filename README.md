@@ -1,7 +1,7 @@
 # Code Names
 
 Online version of the popular game from Czech Game Editions optimized for playing over Zoom, Google Hangouts, or a similar video chat program that allows for screensharing.  
-<br>Only the person running the Python script needs to have access to the game.  All Spymasters (person giving the clues) need to be able to access their email on a device different than the one being used for the video call.  Because the key for the spymasters is emailed, teh spymaster does not need to be alone to give clues.
+<br>Only the person running the Python script needs to have access to the game.  All Spymasters (person giving the clues) need to be able to access their email on a device different than the one being used for the video call.  Because the key for the spymasters is emailed, the spymaster does not need to be alone to give clues.
 
 ## Game Instructions
 The game uses the same rules as the board game.  The full game rules can be found [here](https://czechgames.com/en/codenames/). 
